@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="studentDataModel"
+            type="com.example.roomdb.StudentViewModel" />
+    </data>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".HomeFragment">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8dp"
+                android:padding="@dimen/_8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittext_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="@dimen/_8dp"
+                    android:hint="@string/home_name_hint"
+                    android:inputType="textPersonName"
+                    android:text="@={studentDataModel.name}"
+                    android:textSize="@dimen/textsize_name" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8dp"
+                android:padding="@dimen/_8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittext_course"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_list"
+                    android:drawablePadding="@dimen/_8dp"
+                    android:hint="@string/home_course_hint"
+                    android:inputType="text"
+                    android:text="@={studentDataModel.course}"
+                    android:textSize="@dimen/textsize_name" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_save"
+                style="@style/Widget.MaterialComponents.Button.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_8dp"
+                android:onClick="@{()->studentDataModel.insert()}"
+                android:padding="@dimen/_8dp"
+                android:text="@string/save_btn_msg"
+                app:icon="@drawable/ic_add"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_studentdata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8dp"
+                android:padding="@dimen/_8dp"
+                tools:listitem="@layout/student_layout" />
+        </LinearLayout>
+
+</layout>

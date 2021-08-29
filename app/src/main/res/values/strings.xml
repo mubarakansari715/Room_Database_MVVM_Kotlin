@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RoomDb</string>
+    <string name="bottom_home">Home</string>
+    <string name="bottom_page1">Page1</string>
+    <string name="bottom_page2">Page2</string>
+    <string name="home_name_hint">Enter your name</string>
+    <string name="home_course_hint">Enter your course</string>
+    <string name="save_btn_msg">Save</string>
+    <string name="update_btn_msg">Update</string>
+    <string name="cancel_btn_msg">Cancel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
